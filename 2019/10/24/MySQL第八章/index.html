@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>MySQL第八章 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="索引与事务数据库优化：数据库优化指的是通过各种途径提高查询效率优化方式有多种，但其中之一就是为字段添加索引索引：相当于为某个字段或某几个字段，添加了目录，大大提高了查询效率    索引的分类：    普通索引：    唯一索引：为字段添加唯一约束，就同时添加了唯一索引    主键索引：为字段添加主键约束，就同时添加了主键索引    组合索引：    全文索引：    空间索引：创建索引的方式：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL第八章">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/MySQL第八章/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="索引与事务数据库优化：数据库优化指的是通过各种途径提高查询效率优化方式有多种，但其中之一就是为字段添加索引索引：相当于为某个字段或某几个字段，添加了目录，大大提高了查询效率    索引的分类：    普通索引：    唯一索引：为字段添加唯一约束，就同时添加了唯一索引    主键索引：为字段添加主键约束，就同时添加了主键索引    组合索引：    全文索引：    空间索引：创建索引的方式：">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-24T01:07:14.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="MySQL第八章">
+<meta name="twitter:description" content="索引与事务数据库优化：数据库优化指的是通过各种途径提高查询效率优化方式有多种，但其中之一就是为字段添加索引索引：相当于为某个字段或某几个字段，添加了目录，大大提高了查询效率    索引的分类：    普通索引：    唯一索引：为字段添加唯一约束，就同时添加了唯一索引    主键索引：为字段添加主键约束，就同时添加了主键索引    组合索引：    全文索引：    空间索引：创建索引的方式：">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-MySQL第八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-MySQL第八章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/24/MySQL第八章/">MySQL第八章</a>
+    <h1 class="article-title" itemprop="name">
+      MySQL第八章
     </h1>
   
 
@@ -183,6 +185,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -190,16 +213,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/24/MySQL第八章/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/24/MySQL第八章/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/23/MySQL第六章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL第六章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -219,461 +301,14 @@
 
 
 
-
   
-    <article id="post-MySQL第六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/23/MySQL第六章/">MySQL第六章</a>
-    </h1>
   
 
-        
-        <a href="/2019/10/23/MySQL第六章/" class="archive-article-date">
-  	<time datetime="2019-10-23T02:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、连接：把多张表连接成一张表，要注意一般链接有主外键关系的表<br>    连接分类：<br>    普通连接<br>    内连接:inner join … on …，inner join用内连接方式连接两张表，on后边写的是条件<br>    外连接(左连接与右连接)：<br>        左连接：left join … on …：左边的表显示所有数据，右边的表只显示匹配上的数据<br>        右连接：right join … on …：右边的表显示全部数据，左边的表只显示匹配上的<br>    全连接：左右边都全部显示</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/23/MySQL第六章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL第五章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/MySQL第五章/">MySQL第五章</a>
-    </h1>
   
 
-        
-        <a href="/2019/10/17/MySQL第五章/" class="archive-article-date">
-  	<time datetime="2019-10-17T03:05:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、order by：排序，升序 asc，降序 desc，<br>2、group by：把表分组<br>例如：把某张表按照某个字段进行分组，查询出每个学生的平均成绩，结果要显示的字段为，学生学号，平均成绩<br>SELECT sid,AVG(score) ‘平均成绩’ FROM score GROUP BY sid;<br>3、group by…having…：分组并筛选符合条件的组<br>4、子查询：查询语句里边嵌套查询语句</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/MySQL第五章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL第三四章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/MySQL第三四章/">MySQL第三四章</a>
-    </h1>
   
 
-        
-        <a href="/2019/10/17/MySQL第三四章/" class="archive-article-date">
-  	<time datetime="2019-10-17T02:59:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、mysql运算符<br>    算术运算符：+、-、*、/<br>    逻辑运算符：and、or、not<br>    比较运算符：&gt;、&lt;、&gt;=、&lt;=、&lt;&gt;、!=<br>2、聚合函数<br>    count()：求行数<br>    sum()：求一列的和<br>    avg()：求平均值<br>    max()：求最大值<br>    min()：求最小值<br>3、mysql常用关键字<br>    in：查询在什么什么在选项中的数据，where name in(‘张三’,’李四’)，把name等于张三和李四的查询出来<br>    not in：where name not in(‘张三’,’李四’)，把name不等于张三和李四的查询出来<br>    distinct：去除重复数据<br>    limit：查询出表的前几行<br>    between…and…：在什么什么之间<br>    as</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/MySQL第三四章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL第二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/MySQL第二章/">MySQL第二章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/17/MySQL第二章/" class="archive-article-date">
-  	<time datetime="2019-10-17T02:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、约束<br>   主键约束(primary key)：不允许重复，非空；<br>    主键：一行的唯一标识，表中的其他数据依赖于主键<br>   非空约束(not null)：<br>   唯一约束(unique)：此列不允许重复<br>   默认值(default)：<br>   check约束(check)：<br>   外键约束(foreign key)：外键，此表中的一个字段，引用另外一张表中的字段数据，并且被引用的字段，是另外一张表的主键。那么，此表中的字段就称为本张表的外键<br>2、数据库的设计规范<br>   数据库设计的三大范式<br>    第一范式：表中的字段都是不可分割的最小的数据单元<br>    第二范式：每张表都要有主键，每张表只能描述一件事情<br>    第三范式：非主键字段要依赖于主键字段，非主键字段与主键字段直接相关<br>   在设计表是，尽可能依照三大范式，但有的时候为了性能，会牺牲范式</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/MySQL第二章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/16/MySQL第一章/">MySQL第一章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/16/MySQL第一章/" class="archive-article-date">
-  	<time datetime="2019-10-16T06:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、什么是数据库<br>   数据库分类：<br>    关系型数据库：SQL Server、MySQL、Oracle（甲骨文）<br>    非关系型数据库：redis<br>   数据库即数据仓库，里边存储的是有关系的数据，数据库里边真正存放数据的是一张一张的表<br>   什么是表？<br>     表由行和列组成，行称为记录，列称为字段或属性<br>   一个数据库一般由多张有关系的表组成<br>   MySQL客户端：负责连接上MySQL服务器，进而对MySQL服务器进行操作。比较好用的客户端有sqlyog、navicat<br>   MySQL服务器：数据库与表都是存在服务器上的<br>2、SQL语句：<br>    1、创建语句<br>       1.1、创建数据库：create database 库名;<br>       1.2、创建表：create table 表明（<br>                字段名1 数据类型 约束，<br>                字段名2 数据类型 约束，<br>                字段名3 数据类型<br>            ）<br>        最常用的数据类型：<br>            int：<br>            char：字符串类型，固定长度<br>            varchar：字符串类型，可变长度<br>            float<br>    2、插入语句<br>       insert into 表名（字段1，字段2，…）values（数据1，数据2，…）<br>    3、查询语句<br>       select 字段1，字段2，字段3 from 表名<br>    4、删除语句<br>       删除库：drop database 库名；<br>       删除表：drop table 表名；<br>       删除表中所有的数据：delete from 表名；<br>       删除表中指定的数据：delete from 表名 where…<br>    3、修改语句<br>       update 表名 set…where…<br>    4、修改表的定义的语句<br>       Alter table 旧表名 rename 新表名<br>       Alter table 表名 modefiy 列名的数据类型<br>       Alter table&lt;表名&gt; change 旧列名 新列名 数据类型<br>       Alter table 表名 drop 列名<br>       Alter table 表名 add 新列名 数据类型</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/16/MySQL第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-five" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/five/">five</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/five/" class="archive-article-date">
-  	<time datetime="2019-10-11T09:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1011</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/five/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-11T08:08:40.802Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -696,8 +331,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
